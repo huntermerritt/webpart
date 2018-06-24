@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='myfavicon.ico') }}">
 </head>
 <style>
 
@@ -54,9 +54,9 @@
 <div class="container" style="background-color: #f6e294;">
     <div class="row">
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-10" style="height: 45vh; background-color: white; text-align: center;" id="urlholder">
+        <div class="col-md-10" style="height: 45vh; background-color: white; text-align: center;" id="urlholder">
             <ul class="list-group" style="max-height: 100%; overflow-y: scroll; text-align: left;">
                 <form action="{{ url_for('getdata') }}" method="post">
                     <li class='list-group-item'><button class='btn btn-primary' type="submit">Download Results</button></li>
@@ -68,13 +68,13 @@
 
         </div>
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-10" style="height: 40vh; background-color: white;">
+        <div class="col-md-10" style="height: 40vh; background-color: white;">
 
-            <form action="{{ url_for('hello_world') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url_for('freeuse') }}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Test JSON</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="testinstructions" style="overflow-y: scroll; height: 15vh; resize: none;">{ "testname": "Community Performance Test",
@@ -97,17 +97,17 @@
 
         </div>
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-10" style="background-color: white;">
+        <div class="col-md-10" style="background-color: white;">
 
             {{ canvasstringinsert|safe }}
 
         </div>
 
-        <div class="col-1"></div>
+        <div class="col-md-1"></div>
 
     </div>
 

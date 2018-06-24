@@ -18,7 +18,7 @@ def createbusiness():
 
     return render_template('success.html')
 
-@app.route('/community', methods=['GET', 'POST'])
+@app.route('/community', methods=["POST", "GET"])
 def freeuse():
     testobject = Tester()
 
@@ -38,7 +38,7 @@ def freeuse():
                 textareajson = formresults['testinstructions']
 
                 if textareajson == "":
-                    return render_template('index.html')
+                    return render_template('community.html')
 
                 print(textareajson)
                 jsondict = json.loads(textareajson)
@@ -89,7 +89,7 @@ def freeuse():
             # submit an empty part without filename
             if file.filename == '':
                 #if the file is clicked but then canceled
-                return render_template('index.html')
+                return render_template('community.html')
             if file:
                 filecontents = request.files['file']
 
@@ -217,4 +217,4 @@ def getdata():
     return render_template('upgrade.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='80')
+    app.run(host='0.0.0.0')
