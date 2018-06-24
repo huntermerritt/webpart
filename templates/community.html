@@ -24,61 +24,118 @@
         background-color: #f6e294;
         font-family: 'Roboto', sans-serif;
 
-        margin:0;
-        padding:0;
-        background:url("../static/trianglify.png") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-
     }
 
 </style>
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10vh">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 15vh">
     <a class="navbar-brand" href="#"><img src="../static/HIVE-LOGO.png" style="max-height: 15vh; max-width: 15vh;"></a>
+    {# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>#}
+
+    {#<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Apps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+    </div>#}
 </nav>
 
-<div class="container" style="background-color: transparent;">
+<div class="container" style="background-color: #f6e294;">
     <div class="row">
+
+        <div class="col-1"></div>
+
+        <div class="col-10" style="height: 45vh; background-color: white; text-align: center;" id="urlholder">
+            <ul class="list-group" style="max-height: 100%; overflow-y: scroll; text-align: left;">
+                <form action="{{ url_for('getdata') }}" method="post">
+                    <li class='list-group-item'><button class='btn btn-primary' type="submit">Download Results</button></li>
+                    <input type="hidden" name="filetxt" value="{{ fileret|safe }}">
+                </form>
+                {{ listed|safe }}
+            </ul>
+
+
+        </div>
+
+        <div class="col-1"></div>
+
+        <div class="col-1"></div>
+
+        <div class="col-10" style="height: 40vh; background-color: white;">
+
+            <form action="{{ url_for('hello_world') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Test JSON</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="testinstructions" style="overflow-y: scroll; height: 15vh; resize: none;">{ "testname": "Community Performance Test",
+"tests": [
+{"testname": "first test", "url": "Test URL 1", "method": "GET", "requestnumber": "5", "time": "10"},
+{"testname": "second test", "url": "Test URL 2", "method": "GET", "requestnumber": "5", "time": "10"} ,
+{"testname": "third test", "url": "Test URL 3", "method": "GET", "requestnumber": "5", "time": "10"}
+]
+}</textarea>
+                </div>
+
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" name="file">
+                    <label class="custom-file-label" for="validatedCustomFile">or choose JSON File</label>
+                </div>
+
+                <button class="btn btn-secondary" type="submit" style="margin-top: 5px;" onclick="addhtml()">Submit</button>
+
+            </form>
+
+        </div>
+
+        <div class="col-1"></div>
+
         <div class="col-1"></div>
 
         <div class="col-10" style="background-color: white;">
-            <br>
-            <div style="text-align: center;">
-            <i class="fas fa-broadcast-tower" style="font-size: 100px; text-align: center; color: #f6e294;"></i>
-            </div>
-            <br>
-            <p style="text-align: center;"><em>Performance testing made easy.</em></p>
-            <br>
 
-            <div class="card">
-              <div class="card-header">
-                What:
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Modern Performance and Load Testing</h5>
-                <p class="card-text">Hive is a performance and load testing application built for the cloud. Hive is an all in
-                        one testing and visualization application that allows you to create tests that work
-                        without stitching together multiple applications. This allows you to build and deploy tests in
-                         minutes instead of days with little to no experience.</p>
-              </div>
-            </div>
-            <br>
+            {{ canvasstringinsert|safe }}
+
+        </div>
+
+        <div class="col-1"></div>
 
     </div>
 
 </div>
 
 
+<script>
 
-<div class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10vh;">
-    <img src="../static/HIVE-LOGO.png" style="max-height: 100%;"> <br>
-    <p style="top: 10px; right: 5px; position: absolute;">Made with <span style="color: red;">&hearts;</span> in Fort Worth, Texas</p>
-</div>
+    {{ recentdatas|safe }}
+
+</script>
+
+<script>
+
+    function addhtml()
+    {
+        x = document.getElementById('urlholder');
+        x.innerHTML += "<i  style='font-size:100px; color:rgba(16,16,255,0.2); border-color:rgba(16,,16,255,1.0);' class='fas fa-cog fa-spin'></i><p>Your tests are currently running.</p>";
+    }
+
+</script>
+
+<script>
+
+    {{ copyjson|safe }}
+
+</script>
+
 
 </body>
 </html>
