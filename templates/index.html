@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Hive</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<style>
+
+
+    body
+    {
+        background-color: #f6e294;
+        font-family: 'Roboto', sans-serif;
+
+        margin:0;
+        padding:0;
+        background:url("../static/trianglify.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+    }
+
+</style>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10vh">
+    <a class="navbar-brand" href="#"><img src="../static/HIVE-LOGO.png" style="max-height: 15vh; max-width: 15vh;"></a>
+</nav>
+
+<div class="container" style="background-color: transparent;">
+    <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-10" style="background-color: white;">
+            <br>
+            <div style="text-align: center;">
+            <i class="fas fa-broadcast-tower" style="font-size: 100px; text-align: center; color: #f6e294;"></i>
+            </div>
+            <br>
+            <p style="text-align: center;"><em>Performance testing made easy.</em></p>
+            <br>
+
+            <div class="card">
+              <div class="card-header">
+                What:
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Modern Performance and Load Testing</h5>
+                <p class="card-text">Hive is a performance and load testing application built for the cloud. Hive is an all in
+                        one testing and visualization application that allows you to create tests that work
+                        without stitching together multiple applications. This allows you to build and deploy tests in
+                         minutes instead of days with little to no experience.</p>
+              </div>
+            </div>
+            <br>
+
+            <div class="card">
+              <div class="card-header">
+                How:
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Lightweight Testing and Visualization</h5>
+                <p class="card-text">By combining the testing and visualization applications, Hive is able to shrink down the complexity
+                     of the current testing solutions available and decrease the size of your tests.</p>
+              </div>
+            </div>
+            <br>
+
+            <div class="card">
+              <div class="card-header">
+                Why:
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Testing shouldn't have to be hard.</h5>
+                <p class="card-text">Performance and load testing really should not be very difficult. The inspiration for Hive comes from
+                     countless days wasted trying to stitch together multiple applications for visualization, database, and
+                    testing with constant bugs and errors that had no real fixes. The result is an easy to use testing suite for modern
+                 websites and applications.</p>
+              </div>
+            </div>
+
+            <hr>
+
+            <h3 style="text-align: center;">How To Get Hive:</h3>
+            <br>
+            <br>
+
+            <div class="row">
+
+                <div class="col-3">
+
+                    <div class="card">
+                      <div class="card-header">
+                        Community
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Free: Take it for a spin.</h5>
+                        <p class="card-text">This should let you get a feel for the project and also run testing on smaller
+                         sites and apis. Should be good enough for most websites and use cases.</p>
+
+                          <ul>
+                              <li>Hive Control Center</li>
+                              <li>3 Custom Tests</li>
+                              <li>Dashboard Analytics</li>
+                              <li>Lightweight Application</li>
+                          </ul>
+
+                          <a href="" class="btn btn-secondary">Go</a>
+                      </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+
+                    <div class="card">
+                      <div class="card-header">
+                        Professional
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">$30 per Month: When you have more than one project</h5>
+                        <p class="card-text">This plan is perfect for those that need to measure traffic from more than
+                         one project or website. An upgrade of the li</p>
+
+                          <ul>
+                              <li>Hive Control Center</li>
+                              <li>15 Custom Tests</li>
+                              <li>Dashboard Analytics</li>
+                              <li>Lightweight Application</li>
+                          </ul>
+
+                          <form action="{{ url_for('createbusiness') }}" method="POST">
+                              <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_h5dy5acaAD84dUO09DVkn90e"
+                                data-amount="999"
+                                data-name="Hive"
+                                data-description="Enterprise charge"
+                                data-image="../static/HIVE-LOGO.png"
+                                data-locale="auto">
+                              </script>
+                          </form>
+                      </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+
+                    <div class="card">
+                      <div class="card-header">
+                        Business
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">$150 per Month: For the heavy hitters.</h5>
+                        <p class="card-text">This is for those that are looking to measure more serious traffic to their sites.
+                        Scale up the traffic and get downloadable results. Perfect for a project that needs to track results over time and
+                         present them in a report.</p>
+
+                          <ul>
+                              <li>Hive Control Center</li>
+                              <li>25 Custom Tests</li>
+                              <li>Dashboard Analytics</li>
+                              <li>Lightweight Application</li>
+                              <li>Downloadable Results</li>
+                              <li>Email Support</li>
+                          </ul>
+
+                          <form action="{{ url_for('createbusiness') }}" method="POST">
+                              <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_h5dy5acaAD84dUO09DVkn90e"
+                                data-amount="999"
+                                data-name="Hive"
+                                data-description="Enterprise charge"
+                                data-image="../static/HIVE-LOGO.png"
+                                data-locale="auto">
+                              </script>
+                          </form>
+
+                      </div>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+
+                    <div class="card">
+                      <div class="card-header">
+                        Enterprise
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">We'll work with you: For when you need it all.</h5>
+                        <p class="card-text">This allows you to custom deploy our application onto your existing infrastructure. We
+                         can work with you to help fit the solution to your needs. Start saving developer time and money by updating your
+                        testing stack.</p>
+
+                          <ul>
+                              <li>Hive Control Center</li>
+                              <li>Unlimited Custom Tests</li>
+                              <li>Dashboard Analytics</li>
+                              <li>Lightweight Application</li>
+                              <li>Downloadable Results</li>
+                              <li>Custom Docker Image</li>
+                              <li>Self Hosted Containers</li>
+                              <li>Consistent Performance Testing</li>
+                              <li>Email and Phone Support</li>
+                          </ul>
+
+                          <a href="{{ url_for('enterprise') }}" class="btn btn-secondary">Start Here</a>
+
+                      </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+
+        </div>
+
+        <div class="col-1"></div>
+
+
+
+    </div>
+
+</div>
+
+
+
+<div class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10vh;">
+    <img src="../static/HIVE-LOGO.png" style="max-height: 100%;"> <br>
+    <p style="top: 10px; right: 5px; position: absolute;">Made with <span style="color: red;">&hearts;</span> in Fort Worth, Texas</p>
+</div>
+
+</body>
+</html>
