@@ -18,6 +18,11 @@ def createbusiness():
 
     return render_template('success.html')
 
+@app.route('/communitysetup', methods=['GET', 'POST'])
+def communitysetup():
+
+    return render_template('communitysetup.html')
+
 @app.route('/community', methods=["POST", "GET"])
 def freeuse():
     testobject = Tester()
@@ -26,6 +31,11 @@ def freeuse():
 
             formresults = request.form
             print(request.files)
+            print(formresults)
+
+            if 'url' in formresults.keys():
+                return render_template('community.html', formres=request.form['url'])
+
 
             liststr = ""
 
@@ -134,6 +144,8 @@ def freeuse():
                 copyjson += '] }\";'
                 filecontents += '] }'
                 return render_template('community.html', listed=urlstring, recentdatas=graphstring, canvasstringinsert=canvasstring, copyjson=copyjson, fileret=filecontents)
+
+
     return render_template('community.html', listed="")
 
 

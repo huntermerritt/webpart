@@ -31,7 +31,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 15vh">
-    <a class="navbar-brand" href="#"><img src="../static/HIVE-LOGO.png" style="max-height: 15vh; max-width: 15vh;"></a>
+    <a class="navbar-brand" href="{{ url_for('hello_world') }}"><img src="../static/HIVE-LOGO.png" style="max-height: 15vh; max-width: 15vh;"></a>
     {# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>#}
@@ -79,10 +79,7 @@
                     <label for="exampleFormControlTextarea1">Test JSON</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="testinstructions" style="overflow-y: scroll; height: 15vh; resize: none;">{ "testname": "Community Performance Test",
 "tests": [
-{"testname": "first test", "url": "Test URL 1", "method": "GET", "requestnumber": "5", "time": "10"},
-{"testname": "second test", "url": "Test URL 2", "method": "GET", "requestnumber": "5", "time": "10"} ,
-{"testname": "third test", "url": "Test URL 3", "method": "GET", "requestnumber": "5", "time": "10"}
-]
+{"testname": "Example.com Test 1 ", "url": "{{ formres|safe }}", "method": "GET", "requestnumber": "5", "time": "5"}]
 }</textarea>
                 </div>
 
@@ -91,7 +88,7 @@
                     <label class="custom-file-label" for="validatedCustomFile">or choose JSON File</label>
                 </div>
 
-                <button class="btn btn-secondary" type="submit" style="margin-top: 5px;" onclick="addhtml()">Submit</button>
+                <button class="btn btn-secondary" type="submit" style="margin-top: 5px;" onclick="addhtml()">Start Test</button>
 
             </form>
 
